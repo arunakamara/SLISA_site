@@ -7,7 +7,7 @@ import Footer from '../components/Footer';
 import About from '../components/About';
 import Events from '../components/Events';
 // import News from '../components/News';
-import Membership from '../components/Membership';
+import Membership from '../components/Membership.jsx';
 import Resources from '../components/Resources';
 import Gallery from '../components/Gallery';
 import Contact from '../components/Contact';

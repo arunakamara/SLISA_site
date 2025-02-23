@@ -42,6 +42,9 @@ const Contact = () => {
     setTimeout(() => setSubmitted(false), 2000); // Reset success message
   };
 
+  const contact = `tel:${contactInfo.phone}`
+  const email = `mailto:${contactInfo.email}` 
+
   return (
     <section className="py-16 bg-white">
       <div className="max-w-6xl mx-auto px-4">
@@ -58,16 +61,12 @@ const Contact = () => {
               <strong>Address:</strong> {contactInfo.address}
             </p>
             <p className="text-gray-600 mb-2">
-              <strong>Phone:</strong>{' '}
-              {/* <a href={ tel: ${contactInfo.phone} } className="text-green-800 hover:underline">
-                {contactInfo.phone}
-              </a> */}
+              <strong>Phone: </strong><a href={contact} className="text-green-800 hover:underline">
+                {contactInfo.phone}</a>
             </p>
             <p className="text-gray-600">
-              <strong>Email:</strong>{' '}
-              {/* <a href={mailto:${contactInfo.email}} className="text-green-800 hover:underline">
-                {contactInfo.email}
-              </a> */}
+              <strong>Email: </strong><a href={email} className="text-green-800 hover:underline">
+                {contactInfo.email}</a> 
             </p>
           </div>
         </div>
