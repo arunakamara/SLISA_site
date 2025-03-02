@@ -11,6 +11,10 @@ import Membership from '../components/Membership.jsx';
 import Resources from '../components/Resources';
 import Gallery from '../components/Gallery';
 import Contact from '../components/Contact';
+import FAQ from '../components/FAQ.jsx';
+import Alumni from '../components/Alumni.jsx';
+import Feedback from '../components/Feedback.jsx';
+import Sitemap from '../components/Sitemap.jsx';
 
 function App() {
   return (
@@ -35,6 +39,10 @@ function App() {
             <Route path="/resources" element={<Resources />} />
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/faq" element={<FAQ />} />
+            <Route path="/alumni" element={<Alumni />} />
+            <Route path="/feedback" element={<Feedback />} />
+            <Route path="/sitemap" element={<Sitemap />} />
           </Routes>
         </main>
         <Footer />

@@ -1,13 +1,23 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import logo from '../Images/logo.jpg';
+
+const styles = {
+  width: 50,
+  height: 'auto',
+  borderRadius: 50,
+  marginRight: 0
+
+}
 
 const Navbar = () => {
   return (
     <nav className="bg-green-800 text-white p-4 sticky top-0 z-10 shadow-md">
       <div className="max-w-7xl mx-auto flex justify-between items-center">
-        {/* Logo */}
-        <h2 className="text-xl font-bold">SLSU-AP</h2>
-        {/* Links */}
+        <div>
+          <img src={logo} style={styles}/>
+          <h2 className="text-xl font-bold">SLSU-AP</h2>
+        </div>
         <ul className="flex space-x-6">
           <li>
             <Link to="/" className="hover:underline">Home</Link>
