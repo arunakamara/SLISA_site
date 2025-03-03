@@ -10,19 +10,19 @@ const Gallery = () => {
     {
       id: 1,
       title: 'Cultural Night 2024',
-      url: 'https://via.placeholder.com/300x200?text=Cultural+Night+2024',
+      url: '/Images/cultural.jpg',
       description: 'Students performing traditional Sierra Leonean dance.',
     },
     {
       id: 2,
-      title: 'Study Workshop 2024',
-      url: 'https://via.placeholder.com/300x200?text=Study+Workshop+2024',
-      description: 'Members collaborating on assignments.',
+      title: 'Football Match 2024',
+      url: '/Images/football1.jpg',
+      description: 'Members supporting the football team.',
     },
     {
       id: 3,
       title: 'Independence Day 2024',
-      url: 'https://via.placeholder.com/300x200?text=Independence+Day+2024',
+      url: '/Images/Independence.jpg',
       description: 'Celebrating Sierra Leone’s independence in Andhra Pradesh.',
     },
   ];
@@ -30,15 +30,15 @@ const Gallery = () => {
   const videos = [
     {
       id: 1,
-      title: 'Cultural Night Highlights',
-      url: 'https://www.youtube.com/embed/dQw4w9WgXcQ', // Rickroll as placeholder
-      description: 'Highlights from our 2024 Cultural Night event.',
+      title: 'Fun Adventures',
+      url: '/Videos/fun1.mp4', // Rickroll as placeholder
+      description: 'Fun moments together.',
     },
     {
       id: 2,
-      title: 'Interview with President',
-      url: 'https://www.youtube.com/embed/9bZkp7q19f0', // Another placeholder
-      description: 'Fatima Kamara shares her vision for SLSU-AP.',
+      title: 'Football Match',
+      url: '/Videos/football1.mp4', // Another placeholder
+      description: 'Celebration after winning a match.',
     },
   ];
 
@@ -126,7 +126,7 @@ const Gallery = () => {
                     <iframe
                       src={video.url}
                       title={video.title}
-                      className="absolute top-0 left-0 w-full h-full rounded-md"
+                      className="absolute top-0 left-0 w-full h-full rounded-md "
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                       allowFullScreen
                     />

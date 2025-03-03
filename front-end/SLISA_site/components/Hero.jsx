@@ -10,20 +10,20 @@ const Hero = () => {
   };
 
   return (
-    <section className="bg-white py-20 text-center">
+    <section className="py-20 text-center bg1">
       <div className="max-w-4xl mx-auto">
-        <h1 className="text-4xl md:text-5xl font-bold text-green-800 mb-4">
+        <h1 className="text-4xl md:text-5xl font-bold text-green-800 mb-4 bg-amber-50 rounded-full shadow-2xl shadow-amber-100">
           Welcome to SLSU-AP
         </h1>
-        <p className="text-lg md:text-xl text-gray-700 mb-6">
+        <p className="bg-white md:text-xl text-gray-150 font-bold text-2xl mb-6 mt-10 rounded-2xl">
           Uniting Sierra Leonean students in Andhra Pradesh with pride and purpose.
         </p>
-        <p className="text-base md:text-lg text-gray-600 mb-8">
+        <p className="text-base md:text-lg text-blue-600 mb-8 bg-amber-50 rounded-2xl">
           <strong>Mission:</strong> Building a community that celebrates our heritage and supports academic excellence.
         </p>
         <button
           onClick={handleJoinClick}
-          className={`px-6 py-3 rounded-lg font-semibold text-white transition-colors ${
+          className={`px-6 py-3 hover:cursor-pointer rounded-lg font-semibold text-white transition-colors ${
             joined ? 'bg-green-600' : 'bg-green-800 hover:bg-green-700'
           }`}
         >

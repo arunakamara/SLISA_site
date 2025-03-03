@@ -2,10 +2,26 @@
 
 .drop-down-links {
   @apply block p-2 bg-green-900 text-white hover:bg-blue-300;
-  
 }
 
-
 .links {
-    @apply hover:bg-green-900 hover:font-bold p-4 sm:p-1 rounded-lg;
+  @apply hover:bg-green-900 md:text-xl shadow-inner shadow-black hover:font-bold p-4 sm:p-1 rounded-md;
+}
+
+@utility bg1 {
+  background-image: linear-gradient(
+      rgba(17, 63, 17, 0.459),
+      rgb(255, 255, 255, 0.23),
+      rgba(9, 9, 185, 0.466)
+    ),
+    url("../Images/logo.jpg");
+  background-position: cover;
+  background-attachment: fixed;
+}
+
+@utility profile {
+  width: 120px;
+  height: 120px;
+  border-radius: 25px;
+  box-shadow: .5 0.5 1rem transparent;
 }

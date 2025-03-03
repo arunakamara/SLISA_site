@@ -27,14 +27,14 @@ const Events = () => {
       title: 'Independence Day Celebration 2024',
       date: 'April 27, 2024',
       description: 'A vibrant day of parades and speeches.',
-      photo: 'https://via.placeholder.com/300x200',
+      photo: '/Images/independence.jpg',
     },
     {
       id: 4,
       title: 'Welcome Party 2024',
       date: 'January 15, 2024',
       description: 'New students joined the SLSU-AP family!',
-      photo: 'https://via.placeholder.com/300x200',
+      photo: '/Images/airport11.jpg',
     },
   ];
 
