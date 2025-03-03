@@ -15,11 +15,12 @@ import FAQ from '../components/FAQ.jsx';
 import Alumni from '../components/Alumni.jsx';
 import Feedback from '../components/Feedback.jsx';
 import Sitemap from '../components/Sitemap.jsx';
+import './App.css';
 
 function App() {
   return (
     <Router>
-      <div className="min-h-screen bg-gray-100">
+      <div className="flex flex-col min-h-screen min-w-full">
         <Navbar />
         <main>
           <Routes>

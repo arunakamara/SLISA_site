@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+// import  '../Images/financial_sec.jpg';
 // import Slider from 'react-slick';
 // import "slick-carousel/slick/slick.css";
 // import "slick-carousel/slick/slick-theme.css";
@@ -10,13 +11,13 @@ const Alumni = () => {
   const alumniStories = [
     {
       id: 1,
-      name: 'Aminata Conteh',
-      graduationYear: '2020',
-      profession: 'Software Engineer at TechCorp',
-      storySummary: 'Aminata turned her SLSU-AP experience into a thriving tech career.',
+      name: 'Ishmail Ibrahim Turay',
+      graduationYear: '2024',
+      profession: 'Logistics and Supply Chain Management',
+      storySummary: 'Ishmael turned his SLSU-AP experience into a thriving business career.',
       fullStory:
-        'Aminata joined SLSU-AP in 2017 and quickly became a leader in our tech workshops. After graduating from Andhra University with a degree in Computer Science, she landed a role at TechCorp in Hyderabad. She credits SLSU-AP’s networking events and study groups for her success, saying, “The union gave me confidence and connections that opened doors.” Today, she mentors current members and contributes to our scholarship fund.',
-      photo: 'https://via.placeholder.com/150',
+        'Ishmael joined SLSU-AP in 2022 and quickly became a leading member of the organization, serving as the Chief Financial Officer. He credits SLSU-AP’s networking events and study groups for his success, saying, “The union gave me confidence and connections that opened doors.” Today, he mentors current members and contributes to our scholarship fund.',
+      photo: '/Images/financial_sec.jpg',
     },
     {
       id: 2,

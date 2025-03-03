@@ -1,0 +1,11 @@
+@import "tailwindcss";
+
+.drop-down-links {
+  @apply block p-2 bg-green-900 text-white hover:bg-blue-300;
+  
+}
+
+
+.links {
+    @apply hover:bg-green-900 hover:font-bold p-4 sm:p-1 rounded-lg;
+}

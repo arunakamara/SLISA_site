@@ -1,50 +1,66 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import logo from '../Images/logo.jpg';
-
-const styles = {
-  width: 50,
-  height: 'auto',
-  borderRadius: 50,
-  marginRight: 0
-
-}
+import React from "react";
+import { Link } from "react-router-dom";
+import BurgerMenu from "./BurgerMenu";
+import logo from "../Images/logo.jpg";
 
 const Navbar = () => {
   return (
-    <nav className="bg-green-800 text-white p-4 sticky top-0 z-10 shadow-md">
-      <div className="max-w-7xl mx-auto flex justify-between items-center">
-        <div>
-          <img src={logo} style={styles}/>
-          <h2 className="text-xl font-bold">SLSU-AP</h2>
+    <nav className="bg-green-800 text-white p-3 sticky top-0 z-10 shadow-md ">
+      <div className="min-w-full flex flex-col md:flex-row md:justify-between md:items-center">
+        <div className="logo_title flex flex-col sm:flex-row md:flex-col justify-center items-center ml-3">
+          <img
+            src={logo}
+            className="w-20 sm:w-[50px] h-auto rounded-full m-2"
+          />
+          <h2 className="text-[min(10wv,70px)] font-bold mt-2">SLSU-AP</h2>
         </div>
-        <ul className="flex space-x-6">
-          <li>
-            <Link to="/" className="hover:underline">Home</Link>
-          </li>
-          <li>
-            <Link to="/about" className="hover:underline">About</Link>
-          </li>
-          <li>
-            <Link to="/events" className="hover:underline">Events</Link>
-          </li>
-          <li>
-            <Link to="/news" className="hover:underline">News</Link>
-          </li>
-          <li>
-            <Link to="/membership" className="hover:underline">Membership</Link>
-          </li>
-          <li>
-            <Link to="/resources" className="hover:underline">Resources</Link>
-          </li>
-          <li>
-            <Link to="/gallery" className="hover:underline">Gallery</Link>
-          </li>
-          <li>
-            <Link to="/contact" className="hover:underline">Contact</Link>
-          </li>
-        </ul>
+
+        <div className="hidden sm:flex sm:mt-2 sm:justify-around md:block mr-2 ">
+          <ul className="flex space-x-3 ">
+            <li>
+              <Link to="/" className="links ">
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link to="/about" className="links">
+                About
+              </Link>
+            </li>
+            <li>
+              <Link to="/events" className="links">
+                Events
+              </Link>
+            </li>
+            <li>
+              <Link to="/news" className="links">
+                News
+              </Link>
+            </li>
+            <li>
+              <Link to="/membership" className="links">
+                Membership
+              </Link>
+            </li>
+            <li>
+              <Link to="/resources" className="links">
+                Resources
+              </Link>
+            </li>
+            <li>
+              <Link to="/gallery" className="links">
+                Gallery
+              </Link>
+            </li>
+            <li>
+              <Link to="/contact" className="links">
+                Contact
+              </Link>
+            </li>
+          </ul>
+        </div>
       </div>
+      <BurgerMenu />
     </nav>
   );
 };
