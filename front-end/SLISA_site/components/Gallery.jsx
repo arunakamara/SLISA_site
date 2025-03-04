@@ -40,6 +40,12 @@ const Gallery = () => {
       url: '/Videos/football1.mp4', // Another placeholder
       description: 'Celebration after winning a match.',
     },
+    {
+      id: 3,
+      title: "Miss Mary's Performance",
+      url: '/Videos/performance_mary.mp4', // Another placeholder
+      description: 'Our member, Mary Kargbo dancing performance.',
+    },
   ];
 
   // State for photo lightbox

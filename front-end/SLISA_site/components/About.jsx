@@ -21,6 +21,37 @@ const About = () => {
       bio: "a graduate of Andhra University, department of B.Tech Mechanical Engineering. Class of 2021 to 2025.",
       photo: "/Images/mahony_jj_ansue.jpg",
     },
+    {
+      name: "Mohammad Bangura",
+      role: "Auditor General",
+      bio: "a graduate of Andhra University, Masters in Economics. Class of 2023 to 2025.",
+      photo: "/Images/mohamed_bangura.jpg",
+    },
+    {
+      name: "Mary Mariama kargbo",
+      role: "Treasurer",
+      bio: "a graduate of Gitam University, department of B.Sc Nursing. Class of 2022 to 2026.",
+      photo: "/Images/mary_mariama_kargbo.jpg",
+    },
+    {
+      name: "Abdulai Kiny Abu",
+      role: "Minister of education",
+      bio: "a graduate of Andhra University, department of B.Tech Civil Engineering. Class of 2022 to 2026.",
+      photo: "/Images/abdulai_kinny_abu.jpg",
+    },
+    {
+      name: "Yusuf Mohamed Nabay",
+      role: "Deputy Minister of Education",
+      bio: "a graduate of Andhra University, department of B.Pharmacy. Class of 2022 to 2026.",
+      photo: "/Images/yusuf_mohamed_nabay.jpg",
+    },
+    {
+      name: "Martin james",
+      role: "Photography",
+      bio: "a graduate of Andhra University, department of Computer Science & System Engineering. Class of 2022 to 2026.",
+      photo: "/Images/martin_james.jpg",
+    },
+    
   ];
 
   return (

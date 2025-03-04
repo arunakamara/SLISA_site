@@ -7,87 +7,88 @@ const Membership = () => {
     // Sample members (replace with real data or fetch from backend)
     {
       id: 1,
+      name: "David Lahai",
+      email: "david@example.com",
+      letter: null,
+      photo: "/Images/david_lahai.jpg",
+    },
+    {
+      id: 2,
+      name: "Ishmail Ibrahim Turay",
+      email: "ishmail@example.com",
+      letter: null,
+      photo: "/Images/financial_sec.jpg",
+    },
+    {
+      id: 3,
       name: "Solomon Bakison Moiwo",
       email: "solomon@example.com",
       letter: null,
       photo: "/Images/solomon_bakison_moiwo.jpg",
     },
     {
-      id: 2,
+      id: 4,
       name: "Abdulai Dumbuya",
       email: "abdulai@example.com",
       letter: null,
       photo: "/Images/abdulai_dumbuya.jpg",
     },
     {
-      id: 3,
+      id: 5,
       name: "Mahony James Joel Ansue",
       email: "mahony@example.com",
       letter: null,
       photo: "/Images/mahony_jj_ansue.jpg",
     },
     {
-      id: 4,
+      id: 6,
       name: "Abubakarr Barrie",
       email: "abubakarr@example.com",
       letter: null,
       photo: "/Images/abubakarr_barrie.jpg",
     },
     {
-      id: 5,
+      id: 7,
       name: "Mary Mariama kargbo",
       email: "mary@example.com",
       letter: null,
       photo: "/Images/mary_mariama_kargbo.jpg",
     },
     {
-      id: 6,
+      id: 8,
       name: "Abdulai Kinny Abu",
       email: "abdulai@example.com",
       letter: null,
       photo: "/Images/abdulai_kinny_abu.jpg",
     },
-    {
-      id: 7,
-      name: "Abib Bangura",
-      email: "abib@example.com",
-      letter: null,
-      photo: "/Images/abib_bangura.jpg",
-    },
-    {
-      id: 8,
-      name: "Adama Fatamata",
-      email: "adama@example.com",
-      letter: null,
-      photo: "/Images/adama_fatamata.jpg",
-    },
+    
     {
       id: 9,
-      name: "Alhaji Seray Barry",
-      email: "alhaji@example.com",
+      name: "Mohamed Bangura",
+      email: "mohamed@example.com",
       letter: null,
-      photo: "/Images/alhaji_seray_barry.jpg",
+      photo: "/Images/mohamed_bangura.jpg",
     },
     {
       id: 10,
-      name: "Benjamin Aaron Jones",
-      email: "benjamin@example.com",
+      name: "Francis Boima",
+      email: "francis@example.com",
       letter: null,
-      photo: "/Images/benjamin_aron_jones.jpg",
+      photo: "/Images/francis_boima.jpg",
     },
     {
       id: 11,
-      name: "Deborah Sia Momoh",
-      email: "deborah@example.com",
+      name: "Yusuf Mohamed Nabay",
+      email: "yusuf@example.com",
       letter: null,
-      photo: "/Images/deborah_sia_momoh.jpg",
+      photo: "/Images/yusuf_mohamed_nabay.jpg",
     },
     {
       id: 12,
-      name: "Emmanuel Vandi Massaquoi",
-      email: "emmanuel@example.com",
+      name: "Martin James",
+      email: "martin@example.com",
       letter: null,
-      photo: "/Images/emmanuel_vandi_massaquoi.jpg",
+      photo: "/Images/martin_james.jpg",
     },
     {
       id: 13,
@@ -98,10 +99,10 @@ const Membership = () => {
     },
     {
       id: 14,
-      name: "Francis Boima",
-      email: "francis@example.com",
+      name: "Benjamin Aaron Jones",
+      email: "benjamin@example.com",
       letter: null,
-      photo: "/Images/francis_boima.jpg",
+      photo: "/Images/benjamin_aron_jones.jpg",
     },
     {
       id: 15,
@@ -140,17 +141,17 @@ const Membership = () => {
     },
     {
       id: 20,
-      name: "Martin James",
-      email: "martin@example.com",
+      name: "Emmanuel Vandi Massaquoi",
+      email: "emmanuel@example.com",
       letter: null,
-      photo: "/Images/martin_james.jpg",
+      photo: "/Images/emmanuel_vandi_massaquoi.jpg",
     },
     {
       id: 21,
-      name: "Mohamed Bangura",
-      email: "mohamed@example.com",
+      name: "Alhaji Seray Barry",
+      email: "alhaji@example.com",
       letter: null,
-      photo: "/Images/mohamed_bangura.jpg",
+      photo: "/Images/alhaji_seray_barry.jpg",
     },
     {
       id: 22,
@@ -210,10 +211,10 @@ const Membership = () => {
     },
     {
       id: 30,
-      name: "Yusuf Mohamed Nabay",
-      email: "yusuf@example.com",
+      name: "Deborah Sia Momoh",
+      email: "deborah@example.com",
       letter: null,
-      photo: "/Images/yusuf_mohamed_nabay.jpg",
+      photo: "/Images/deborah_sia_momoh.jpg",
     },
     {
       id: 31,
@@ -229,6 +230,28 @@ const Membership = () => {
       letter: null,
       photo: "/Images/ishmail_biaka_sesay.jpg",
     },
+    {
+      id: 33,
+      name: "Abib Bangura",
+      email: "abib@example.com",
+      letter: null,
+      photo: "/Images/abib_bangura.jpg",
+    },
+    {
+      id: 34,
+      name: "Adama Fatamata",
+      email: "adama@example.com",
+      letter: null,
+      photo: "/Images/adama_fatamata.jpg",
+    },
+    {
+      id: 35,
+      name: "Haja Salimatu Bah",
+      email: "haja@example.com",
+      letter: null,
+      photo: "/Images/haja_salimatu_bah.jpg",
+    },
+    
   ]);
   const [submitted, setSubmitted] = useState(false);
 
@@ -396,7 +419,7 @@ const Membership = () => {
               No members listed yet. Join us to be the first!
             </p>
           ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
               {members.map((member) => (
                 <div
                   key={member.id}
@@ -413,12 +436,12 @@ const Membership = () => {
                     alt={member.name}
                     className="profile"
                   />
-                  <button
+                  {/* <button
                     onClick={() => handleDownload(member)}
                     className="mt-4 px-4 py-2 bg-green-800 text-white rounded-lg hover:bg-green-700 transition-colors"
                   >
                     Download Acceptance Letter
-                  </button>
+                  </button> */}
                 </div>
               ))}
             </div>
