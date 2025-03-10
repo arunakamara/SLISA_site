@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import BurgerMenu from "./BurgerMenu";
 import logo from "../Images/logo.jpg";
 
-const Navbar = () => {
+const Navbar = ({ loggedIn, handleLogout }) => {
   return (
     <nav className="bg-green-800 text-white p-3 sticky top-0 z-10 shadow-md ">
       <div className="min-w-full flex flex-col md:flex-row md:justify-between md:items-center">
@@ -57,6 +57,33 @@ const Navbar = () => {
                 Contact
               </Link>
             </li>
+            {loggedIn ? (
+              <>
+                <li>
+                  <Link to="/profile" className="links">
+                    Profile
+                  </Link>
+                </li>
+                <li>
+                  <button className="links" onClick={handleLogout}>
+                    Logout
+                  </button>
+                </li>
+              </>
+            ) : (
+              <>
+                <li>
+                  <Link to="/login" className="links">
+                    Login
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/register" className="links">
+                    Register
+                  </Link>
+                </li>
+              </>
+            )}
           </ul>
         </div>
       </div>

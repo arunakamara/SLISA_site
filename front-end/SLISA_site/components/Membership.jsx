@@ -239,7 +239,7 @@ const Membership = () => {
     },
     {
       id: 34,
-      name: "Adama Fatamata",
+      name: "Adama Fatamata Turay",
       email: "adama@example.com",
       letter: null,
       photo: "/Images/adama_fatamata.jpg",

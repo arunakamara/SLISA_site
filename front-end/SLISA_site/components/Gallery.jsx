@@ -1,50 +1,57 @@
-import React, { useState } from 'react';
-import Modal from 'react-modal';
+import React, { useState } from "react";
+import Modal from "react-modal";
 
 // Bind modal to app element for accessibility
-Modal.setAppElement('#root');
+Modal.setAppElement("#root");
 
 const Gallery = () => {
   // Sample data (replace with real photos and videos)
   const photos = [
     {
       id: 1,
-      title: 'Cultural Night 2024',
-      url: '/Images/cultural.jpg',
-      description: 'Students performing traditional Sierra Leonean dance.',
+      title: "Cultural Night 2024",
+      url: "/Images/cultural.jpg",
+      description: "Students performing traditional Sierra Leonean dance.",
     },
     {
       id: 2,
-      title: 'Football Match 2024',
-      url: '/Images/football1.jpg',
-      description: 'Members supporting the football team.',
+      title: "Football Match 2024",
+      url: "/Images/football1.jpg",
+      description: "Members supporting the football team.",
     },
     {
       id: 3,
-      title: 'Independence Day 2024',
-      url: '/Images/Independence.jpg',
-      description: 'Celebrating Sierra Leone’s independence in Andhra Pradesh.',
+      title: "Independence Day 2024",
+      url: "/Images/Independence.jpg",
+      description: "Celebrating Sierra Leone’s independence in Andhra Pradesh.",
     },
   ];
 
   const videos = [
     {
       id: 1,
-      title: 'Fun Adventures',
-      url: '/Videos/fun1.mp4', // Rickroll as placeholder
-      description: 'Fun moments together.',
+      title: "Fun Adventures",
+      url: "/Videos/fun1.mp4", // Rickroll as placeholder
+      description: "Fun moments together.",
     },
     {
       id: 2,
-      title: 'Football Match',
-      url: '/Videos/football1.mp4', // Another placeholder
-      description: 'Celebration after winning a match.',
+      title: "Football Match",
+      url: "/Videos/football1.mp4", // Another placeholder
+      description: "Celebration after winning a match.",
     },
     {
       id: 3,
       title: "Miss Mary's Performance",
-      url: '/Videos/performance_mary.mp4', // Another placeholder
-      description: 'Our member, Mary Kargbo dancing performance.',
+      url: "/Videos/performance_mary.mp4", // Another placeholder
+      description: "Our member, Mary Kargbo dancing performance.",
+    },
+    {
+      id: 4,
+      title: "Miss Mary flying our country's flag",
+      url: "/Videos/performance_mary2.mp4", // Another placeholder
+      description:
+        "Our member, Mary Kargbo representing Sierra Leone in Malaysia.",
     },
   ];
 
@@ -71,11 +78,16 @@ const Gallery = () => {
         <div className="mb-16">
           <h2 className="text-2xl font-semibold text-gray-800 mb-6">Photos</h2>
           {photos.length === 0 ? (
-            <p className="text-gray-600">No photos available yet. Check back soon!</p>
+            <p className="text-gray-600">
+              No photos available yet. Check back soon!
+            </p>
           ) : (
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
               {photos.map((photo) => (
-                <div key={photo.id} className="bg-gray-50 rounded-lg shadow-md overflow-hidden">
+                <div
+                  key={photo.id}
+                  className="bg-gray-50 rounded-lg shadow-md overflow-hidden"
+                >
                   <img
                     src={photo.url}
                     alt={photo.title}
@@ -83,7 +95,9 @@ const Gallery = () => {
                     onClick={() => openModal(photo)}
                   />
                   <div className="p-4">
-                    <h3 className="text-lg font-semibold text-gray-800">{photo.title}</h3>
+                    <h3 className="text-lg font-semibold text-gray-800">
+                      {photo.title}
+                    </h3>
                     <p className="text-gray-600">{photo.description}</p>
                   </div>
                 </div>
@@ -106,7 +120,9 @@ const Gallery = () => {
                 alt={selectedPhoto.title}
                 className="w-full max-h-[70vh] object-contain mb-4"
               />
-              <h3 className="text-xl font-semibold text-gray-800">{selectedPhoto.title}</h3>
+              <h3 className="text-xl font-semibold text-gray-800">
+                {selectedPhoto.title}
+              </h3>
               <p className="text-gray-600 mb-4">{selectedPhoto.description}</p>
               <button
                 onClick={closeModal}
@@ -126,14 +142,19 @@ const Gallery = () => {
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {videos.map((video) => (
-                <div key={video.id} className="bg-gray-50 p-6 rounded-lg shadow-md">
-                  <h3 className="text-lg font-semibold text-gray-800 mb-2">{video.title}</h3>
+                <div
+                  key={video.id}
+                  className="bg-gray-50 p-6 rounded-lg shadow-md"
+                >
+                  <h3 className="text-lg font-semibold text-gray-800 mb-2">
+                    {video.title}
+                  </h3>
                   <div className="relative pb-[56.25%] mb-4">
-                    <iframe
-                      src={video.url}
+                    <video
+                      src={video.url} 
                       title={video.title}
-                      className="absolute top-0 left-0 w-full h-full rounded-md "
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      className="absolute top-0 left-0 w-full h-full rounded-md"
+                      controls
                       allowFullScreen
                     />
                   </div>
