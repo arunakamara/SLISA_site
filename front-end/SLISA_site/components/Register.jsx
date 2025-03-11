@@ -9,7 +9,7 @@ const Register = ({ users, handleRegister }) => {
   const navigate = useNavigate();
   const [stateUniversities, setStateUniversities] = useState([]);
   const [privateUniversities, setPrivateUniversities] = useState([]);
-  const [showOtherUniversity, setShowOtherUniversity] = useState(false);
+  // const [showOtherUniversity, setShowOtherUniversity] = useState(false);
 
   const levelOptions = ["Undergraduate", "Master's", "Ph.D."];
 
@@ -38,15 +38,16 @@ const Register = ({ users, handleRegister }) => {
       confirmPassword: "",
       universityType: "",
       universityName: "",
+      otherUniversity: "",
       levelOfEducation: "",
       course: "",
     },
     validationSchema,
     onSubmit: (values) => {
-      if (users.find((u) => u.email === values.email)) {
-        toast.error("Email already registered");
-        return;
-      }
+      // if (users.find((u) => u.email === values.email)) {
+      //   toast.error("Email already registered");
+      //   return;
+      // }
       handleRegister(values);
       navigate("/login");
     },
@@ -116,7 +117,7 @@ const Register = ({ users, handleRegister }) => {
                     className="w-full p-2 border rounded-lg"
                     onChange={(e) => {
                       formik.handleChange(e);
-                      setShowOtherUniversity(e.target.value === "others");
+                      // setShowOtherUniversity(e.target.value === "others");
                     }}
                   >
                     <option value="">Select University Name</option>
@@ -130,7 +131,7 @@ const Register = ({ users, handleRegister }) => {
                     ))}
                     <option value="others">Others</option>
                   </select>
-                  {showOtherUniversity && (
+                  {/* {showOtherUniversity && (
                     <div className="mt-4">
                       <label
                         className="block text-gray-700 mb-1 font-semibold capitalize"
@@ -146,7 +147,7 @@ const Register = ({ users, handleRegister }) => {
                         placeholder="Enter your University Name"
                       />
                     </div>
-                  )}
+                  )} */}
                 </>
               ) : field === "levelOfEducation" ? (
                 <select

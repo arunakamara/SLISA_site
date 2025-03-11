@@ -1,12 +1,13 @@
 import React, { useState } from "react";
-import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import {
   BrowserRouter as Router,
   Route,
   Routes,
   Navigate,
 } from "react-router-dom";
+import http from "../services/httpService.js"
 import Navbar from "../components/Navbar";
 import Register from "../components/Register";
 import Login from "../components/Login";
@@ -27,14 +28,25 @@ import Feedback from "../components/Feedback.jsx";
 import Sitemap from "../components/Sitemap.jsx";
 import "./App.css";
 
+
+
 function App() {
   const [users, setUsers] = useState([]);
   const [loggedIn, setLoggedIn] = useState(false);
   const [currentUser, setCurrentUser] = useState(null);
 
-  const handleRegister = (user) => {
-    setUsers([...users, user]);
-  };
+  // const handleRegister = http (user) {
+  //   setUsers([...users, user]);
+  //   await http.post("http://localhost:5000/api/members")
+  // };
+
+  async function handleRegister(user) {
+    const { data: member } = await http.post(
+      "http://localhost:5000/api/members",
+      user
+    );
+    console.log(member);
+  }
 
   const handleLogin = (user) => {
     setLoggedIn(true);
@@ -49,16 +61,17 @@ function App() {
   const styles = {
     position: "sticky",
     top: 0,
-  }
+  };
   return (
     <>
       <ToastContainer />
       <Router>
         <div className="flex flex-col min-h-screen min-w-full ">
           <Navbar
-          style={styles}
-          loggedIn={loggedIn}
-          handleLogout={handleLogout} />
+            style={styles}
+            loggedIn={loggedIn}
+            handleLogout={handleLogout}
+          />
           <main>
             <Routes>
               <Route
