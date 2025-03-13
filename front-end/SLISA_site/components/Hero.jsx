@@ -1,16 +1,19 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+
 
 const Hero = () => {
   const [joined, setJoined] = useState(false);
+  const navigate = useNavigate();
 
   const handleJoinClick = () => {
     setJoined(true);
-    // Simulate a join action (e.g., later connect to a form or API)
+    navigate("/register") // Simulate a join action (e.g., later connect to a form or API)
     setTimeout(() => setJoined(false), 2000); // Reset after 2s
   };
 
   return (
-    <section className="py-20 text-center bg1">
+    <section className="py-20 text-center">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl md:text-5xl font-bold text-green-800 mb-4 bg-amber-50 rounded-full shadow-2xl shadow-amber-100">
           Welcome to SLSU-AP

@@ -11,6 +11,7 @@ const Footer = () => {
           <a href="https://instagram.com/slsuap" className="hover:underline">Instagram</a>
           <a href="https://twitter.com/slsuap" className="hover:underline">Twitter</a>
           <Link to="/contact" className="hover:underline">Contact Us</Link>
+          <Link to="/news" className="hover:underline">News</Link>
           <Link to="/faq" className="hover:underline">FAQ</Link>
           <Link to="/feedback" className="hover:underline">Feedback</Link>
           <Link to="/alumni" className="hover:underline">Alumni</Link>

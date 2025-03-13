@@ -5,7 +5,7 @@
 }
 
 .links {
-  @apply hover:bg-green-900 md:text-xl shadow-inner shadow-black hover:font-bold p-4 sm:p-1 rounded-md;
+  @apply hover:bg-green-900 md:text-xl md:max-lg:text-sm shadow-inner shadow-black hover:font-bold p-4 sm:p-1 rounded-md;
 }
 
 @utility bg1 {
@@ -23,5 +23,5 @@
   width: 120px;
   height: 120px;
   border-radius: 25px;
-  box-shadow: .5 0.5 1rem transparent;
+  box-shadow: 0.5 0.5 1rem transparent;
 }

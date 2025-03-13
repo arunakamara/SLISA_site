@@ -9,7 +9,6 @@ const Register = ({ users, handleRegister }) => {
   const navigate = useNavigate();
   const [stateUniversities, setStateUniversities] = useState([]);
   const [privateUniversities, setPrivateUniversities] = useState([]);
-  // const [showOtherUniversity, setShowOtherUniversity] = useState(false);
 
   const levelOptions = ["Undergraduate", "Master's", "Ph.D."];
 
@@ -26,6 +25,7 @@ const Register = ({ users, handleRegister }) => {
       .required("Confirm Password is required"),
     universityType: Yup.string().required("University Type is required"),
     universityName: Yup.string().required("University Name is required"),
+    otherUniversity: Yup.string(),
     levelOfEducation: Yup.string().required("Level of Education is required"),
     course: Yup.string().required("Course is required"),
   });
@@ -38,16 +38,17 @@ const Register = ({ users, handleRegister }) => {
       confirmPassword: "",
       universityType: "",
       universityName: "",
-      otherUniversity: "",
+      otherUniversity: "Enter your other University Name",
       levelOfEducation: "",
       course: "",
     },
     validationSchema,
     onSubmit: (values) => {
-      // if (users.find((u) => u.email === values.email)) {
-      //   toast.error("Email already registered");
-      //   return;
-      // }
+      if (users.find((u) => u.email === values.email)) {
+        toast.error("Email already registered");
+        return;
+      }
+      console.log(values);
       handleRegister(values);
       navigate("/login");
     },
@@ -61,7 +62,7 @@ const Register = ({ users, handleRegister }) => {
       const universities = data.map((u) => u.name);
       setPrivateUniversities(universities);
     } catch (ex) {
-      console.log(ex);
+      console.log(ex.response.data);
     }
   };
   const getStateUniversity = async () => {
@@ -72,7 +73,7 @@ const Register = ({ users, handleRegister }) => {
       const universities = data.map((u) => u.name);
       setStateUniversities(universities);
     } catch (ex) {
-      console.log(ex);
+      console.log(ex.response.data);
     }
   };
 
@@ -82,7 +83,7 @@ const Register = ({ users, handleRegister }) => {
   }, []);
 
   return (
-    <section className="py-16 bg-white">
+    <section className="py-16 bg-white sm:mx-8 md:w-[80%] lg:w-[50%] md:px-8 md:mx-auto">
       <div className="max-w-6xl mx-auto px-4">
         <h1 className="text-4xl md:text-5xl font-bold text-green-800 text-center mb-12">
           Register
@@ -117,7 +118,6 @@ const Register = ({ users, handleRegister }) => {
                     className="w-full p-2 border rounded-lg"
                     onChange={(e) => {
                       formik.handleChange(e);
-                      // setShowOtherUniversity(e.target.value === "others");
                     }}
                   >
                     <option value="">Select University Name</option>
@@ -131,24 +131,18 @@ const Register = ({ users, handleRegister }) => {
                     ))}
                     <option value="others">Others</option>
                   </select>
-                  {/* {showOtherUniversity && (
-                    <div className="mt-4">
-                      <label
-                        className="block text-gray-700 mb-1 font-semibold capitalize"
-                        htmlFor="otherUniversity"
-                      >
-                        Other University Name
-                      </label>
-                      <input
-                        type="text"
-                        id="otherUniversity"
-                        {...formik.getFieldProps("otherUniversity")}
-                        className="w-full p-2 border rounded-lg"
-                        placeholder="Enter your University Name"
-                      />
-                    </div>
-                  )} */}
                 </>
+              ) : field === "otherUniversity" ? (
+                <input
+                  type="text"
+                  id={field}
+                  disabled={formik.values.universityName !== "others"}
+                  {...formik.getFieldProps(field)}
+                  className="w-full p-2 border rounded-lg "
+                  placeholder={`Enter your ${field
+                    .replace(/([A-Z])/g, " $1")
+                    .trim()} if your university is not in the list above`}
+                />
               ) : field === "levelOfEducation" ? (
                 <select
                   id={field}
@@ -184,7 +178,7 @@ const Register = ({ users, handleRegister }) => {
           ))}
           <button
             type="submit"
-            className="w-full px-4 py-2 bg-green-800 text-white rounded-lg hover:bg-green-700"
+            className="w-full cursor-pointer px-4 py-2 bg-green-800 text-white rounded-lg hover:bg-green-700"
           >
             Register
           </button>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import {
@@ -7,7 +7,7 @@ import {
   Routes,
   Navigate,
 } from "react-router-dom";
-import http from "../services/httpService.js"
+import http from "../services/httpService.js";
 import Navbar from "../components/Navbar";
 import Register from "../components/Register";
 import Login from "../components/Login";
@@ -28,24 +28,31 @@ import Feedback from "../components/Feedback.jsx";
 import Sitemap from "../components/Sitemap.jsx";
 import "./App.css";
 
-
-
 function App() {
   const [users, setUsers] = useState([]);
   const [loggedIn, setLoggedIn] = useState(false);
   const [currentUser, setCurrentUser] = useState(null);
 
-  // const handleRegister = http (user) {
-  //   setUsers([...users, user]);
-  //   await http.post("http://localhost:5000/api/members")
-  // };
+  async function getMembers() {
+    try {
+      const { data: members } = await http.get(
+        "http://localhost:5000/api/members"
+      );
+      setUsers(members);
+    } catch ({ response }) {
+      console.log(response.data);
+    }
+  }
 
   async function handleRegister(user) {
-    const { data: member } = await http.post(
-      "http://localhost:5000/api/members",
-      user
-    );
-    console.log(member);
+    try {
+       await http.post(
+        "http://localhost:5000/api/members",
+        user
+      );
+    } catch ({response}) {
+      console.log(response.data);
+    }
   }
 
   const handleLogin = (user) => {
@@ -58,20 +65,16 @@ function App() {
     setCurrentUser(null);
   };
 
-  const styles = {
-    position: "sticky",
-    top: 0,
-  };
+  useEffect(() => {
+    getMembers();
+  }, []);
+
   return (
     <>
       <ToastContainer />
       <Router>
-        <div className="flex flex-col min-h-screen min-w-full ">
-          <Navbar
-            style={styles}
-            loggedIn={loggedIn}
-            handleLogout={handleLogout}
-          />
+        <div className="flex flex-col justify-between min-h-screen bg1 ">
+          <Navbar loggedIn={loggedIn} handleLogout={handleLogout} />
           <main>
             <Routes>
               <Route

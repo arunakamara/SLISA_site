@@ -32,11 +32,7 @@ const Navbar = ({ loggedIn, handleLogout }) => {
                 Events
               </Link>
             </li>
-            <li>
-              <Link to="/news" className="links">
-                News
-              </Link>
-            </li>
+            
             <li>
               <Link to="/membership" className="links">
                 Membership
@@ -52,11 +48,7 @@ const Navbar = ({ loggedIn, handleLogout }) => {
                 Gallery
               </Link>
             </li>
-            <li>
-              <Link to="/contact" className="links">
-                Contact
-              </Link>
-            </li>
+            
             {loggedIn ? (
               <>
                 <li>
